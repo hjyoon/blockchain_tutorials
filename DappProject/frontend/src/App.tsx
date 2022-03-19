@@ -1,7 +1,8 @@
 import React, { FC, useEffect, useState } from "react";
-import { Button } from "@chakra-ui/react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Main from "./routes/Main";
+import Layout from "./components/Layout";
+import Main from "./routes/main";
+import MyAnimal from "./routes/my-animal";
 
 const App: FC = () => {
   const [account, setAccount] = useState<string>("");
@@ -31,9 +32,12 @@ const App: FC = () => {
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Main account={account} />} />
-      </Routes>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Main account={account} />} />
+          <Route path="my-animal" element={<MyAnimal account={account} />} />
+        </Routes>
+      </Layout>
     </BrowserRouter>
   );
 };
