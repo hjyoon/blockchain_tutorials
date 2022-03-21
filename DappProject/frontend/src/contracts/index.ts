@@ -3,11 +3,6 @@ import Web3 from "web3";
 
 const mintAnimalTokenAbi: AbiItem[] = [
   {
-    inputs: [],
-    stateMutability: "nonpayable",
-    type: "constructor",
-  },
-  {
     anonymous: false,
     inputs: [
       {
@@ -85,25 +80,6 @@ const mintAnimalTokenAbi: AbiItem[] = [
   {
     inputs: [
       {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    name: "animalTypes",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
         internalType: "address",
         name: "to",
         type: "address",
@@ -120,104 +96,10 @@ const mintAnimalTokenAbi: AbiItem[] = [
     type: "function",
   },
   {
-    inputs: [
-      {
-        internalType: "address",
-        name: "owner",
-        type: "address",
-      },
-    ],
-    name: "balanceOf",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "tokenId",
-        type: "uint256",
-      },
-    ],
-    name: "getApproved",
-    outputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "owner",
-        type: "address",
-      },
-      {
-        internalType: "address",
-        name: "operator",
-        type: "address",
-      },
-    ],
-    name: "isApprovedForAll",
-    outputs: [
-      {
-        internalType: "bool",
-        name: "",
-        type: "bool",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
     inputs: [],
     name: "mintAnimalToken",
     outputs: [],
     stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "name",
-    outputs: [
-      {
-        internalType: "string",
-        name: "",
-        type: "string",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "tokenId",
-        type: "uint256",
-      },
-    ],
-    name: "ownerOf",
-    outputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-    ],
-    stateMutability: "view",
     type: "function",
   },
   {
@@ -287,6 +169,209 @@ const mintAnimalTokenAbi: AbiItem[] = [
     name: "setApprovalForAll",
     outputs: [],
     stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_saleAnimalToken",
+        type: "address",
+      },
+    ],
+    name: "setSaleAnimalToken",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "from",
+        type: "address",
+      },
+      {
+        internalType: "address",
+        name: "to",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "tokenId",
+        type: "uint256",
+      },
+    ],
+    name: "transferFrom",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    stateMutability: "nonpayable",
+    type: "constructor",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "animalTypes",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "owner",
+        type: "address",
+      },
+    ],
+    name: "balanceOf",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_animalTokenOwner",
+        type: "address",
+      },
+    ],
+    name: "getAnimalTokens",
+    outputs: [
+      {
+        components: [
+          {
+            internalType: "uint256",
+            name: "animalTokenId",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "animalType",
+            type: "uint256",
+          },
+          {
+            internalType: "uint256",
+            name: "animalPrice",
+            type: "uint256",
+          },
+        ],
+        internalType: "struct MintAnimalToken.AnimalTokenData[]",
+        name: "",
+        type: "tuple[]",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "tokenId",
+        type: "uint256",
+      },
+    ],
+    name: "getApproved",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "owner",
+        type: "address",
+      },
+      {
+        internalType: "address",
+        name: "operator",
+        type: "address",
+      },
+    ],
+    name: "isApprovedForAll",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "name",
+    outputs: [
+      {
+        internalType: "string",
+        name: "",
+        type: "string",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "tokenId",
+        type: "uint256",
+      },
+    ],
+    name: "ownerOf",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "saleAnimalToken",
+    outputs: [
+      {
+        internalType: "contract SaleAnimalToken",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
     type: "function",
   },
   {
@@ -396,31 +481,39 @@ const mintAnimalTokenAbi: AbiItem[] = [
     stateMutability: "view",
     type: "function",
   },
+];
+const saleAnimalTokenAbi: AbiItem[] = [
   {
     inputs: [
       {
-        internalType: "address",
-        name: "from",
-        type: "address",
-      },
-      {
-        internalType: "address",
-        name: "to",
-        type: "address",
-      },
-      {
         internalType: "uint256",
-        name: "tokenId",
+        name: "_animalTokenId",
         type: "uint256",
       },
     ],
-    name: "transferFrom",
+    name: "purchaseAnimalToken",
+    outputs: [],
+    stateMutability: "payable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_animalTokenId",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "_price",
+        type: "uint256",
+      },
+    ],
+    name: "setForSaleAnimalToken",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
   },
-];
-const saleAnimalTokenAbi: AbiItem[] = [
   {
     inputs: [
       {
@@ -441,6 +534,25 @@ const saleAnimalTokenAbi: AbiItem[] = [
       },
     ],
     name: "animalTokenPrices",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_animalTokenId",
+        type: "uint256",
+      },
+    ],
+    name: "getAnimalTokenPrice",
     outputs: [
       {
         internalType: "uint256",
@@ -496,41 +608,11 @@ const saleAnimalTokenAbi: AbiItem[] = [
     stateMutability: "view",
     type: "function",
   },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "_animalTokenId",
-        type: "uint256",
-      },
-    ],
-    name: "purchaseAnimalToken",
-    outputs: [],
-    stateMutability: "payable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "uint256",
-        name: "_animalTokenId",
-        type: "uint256",
-      },
-      {
-        internalType: "uint256",
-        name: "_price",
-        type: "uint256",
-      },
-    ],
-    name: "setForSaleAnimalToken",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
 ];
 
-const mintAnimalTokenAddress = "0x5411E039a26398f3D70a07fdA3DB67B3F574f598";
-const saleAnimalTokenAddress = "0x1Ae8B052AcD6a3ec15e46E12034eC62E23A5Cb7B";
+const mintAnimalTokenAddress = "0x8A32a37BAD76071E462F87d1F1885B1DdC778003";
+export const saleAnimalTokenAddress =
+  "0xF052B4FdC5D222e4A147E5F6B3b2C6ED4A4FAc7F";
 
 export const web3 = new Web3(window.ethereum);
 

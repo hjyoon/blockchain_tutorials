@@ -17,7 +17,7 @@ const Main: FC<MainProps> = ({ account }) => {
         .mintAnimalToken()
         .send({ from: account });
 
-      if (response.status) {
+      if (response) {
         const balanceLength = await mintAnimalTokenContract.methods
           .balanceOf(account)
           .call();
